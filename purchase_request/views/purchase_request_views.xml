@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="purchase_request_form_view" model="ir.ui.view">
+            <field name="name">purchase.request.form</field>
+            <field name="model">purchase.request</field>
+            <field name="arch" type="xml">
+                <form string="purchase_request">
+                    <sheet>
+                        <div>
+                            <h2>Yêu Cầu Tham Chiếu</h2>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="request_id"/>
+                                <field name="approver_id"/>
+                                <field name="department_id"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="date_approve"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                            <field name="state"/>
+                        </group>
+                        <notebook>
+                            <page name="san_pham" string="Sản Phẩm">
+                                <field name="request_line_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="purchase_request_tree_view" model="ir.ui.view">
+            <field name="name">purchase.request.tree.view</field>
+            <field name="model">purchase.request</field>
+            <field name="arch" type="xml">
+                <tree string="purchase" default_order="create_date desc">
+                    <field name="name"/>
+                    <field name="department_id"/>
+                    <field name="request_id"/>
+                    <field name="approver_id"/>
+                    <field name="date"/>
+                    <field name="date_approve"/>
+                    <field name="state"/>
+                    <field name="total_qty"/>
+                    <field name="total_amount"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_purchase_request_views">
+            <field name="name">Yêu Cầu Mua Hàng</field>
+            <field name="res_model">purchase.request</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5,0,0),
+                (0,0, {'view_mode':'tree', 'view_id': ref('purchase_request_tree_view')}),
+                (0,0, {'view_mode':'form', 'view_id': ref('purchase_request_form_view')})]"/>
+        </record>
+        <menuitem id="purchase_menu" name="Purchase Request"/>
+    </data>
+</odoo>
