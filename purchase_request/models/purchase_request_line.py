@@ -7,10 +7,13 @@ class PurchaseRequestLine(models.Model):
     request_id = fields.Many2one('purchase.request', string='STT')
     product_id = fields.Many2one('product.template', string='Sản phẩm')
     description = fields.Text(string='Mô tả')
+    company_id = fields.Many2one('res.company', string='Công Ty')
     uom_id = fields.Many2one('uom.uom', string='Đơn vị tính')
     qty = fields.Float(string='Số lượng')
-    qty_approve = fields.Float(string='Số lượng đã phê duyệt')
+    qty_approve = fields.Float(string='Số lượng đã phê duyệt',invisible=True)
     total = fields.Float(string='Tổng', compute='_compute_total', store=True)
+    state = fields.Selection([('draft', 'Draft'), ('wait', 'Wait'), ('approved', 'Approved'), ('cancel', 'Cancel')],
+                             string='Trạng thái', default='draft')
 
     @api.depends('qty', 'product_id.list_price')
     def _compute_total(self):
