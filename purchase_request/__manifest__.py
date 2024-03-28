@@ -6,15 +6,12 @@
     'website': "https://www.ngannh.com",
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['base','purchase', 'hr', 'product'],
+    'depends': ['purchase', 'hr', 'product'],
     'data': [
-        # 'security/ir.model.access.csv',
-        # 'views/views.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
         'data/purchase_sequence.xml',
         'views/purchase_request_views.xml',
         'views/purchase_request_line_views.xml',
-        # 'views/templates.xml',
-
     ],
-
 }
