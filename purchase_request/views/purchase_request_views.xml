@@ -7,15 +7,19 @@
             <field name="arch" type="xml">
                 <form string="purchase_request">
                     <header>
-                        <button name="state" string="Yêu Cầu Phê Duyệt" attrs="{'invisible':[('state', 'not in','draft')]}"/>
+<!--                        <button name="returns" string="Yêu Cầu Phê Duyệt" attrs="{'invisible':[('state', 'not in','draft')]}"/>-->
+                        <button name="returns" string="Yêu Cầu Phê Duyệt" type="object" states="draft" class="oe_highlight" groups="base.group_user"/>
+                        <button name="QL" string="Quay Lại" type="object" states="wait" class="oe_highlight" groups="base.group_user"/>
+                        <button name="BTW" string="Phê Duyệt" type="object" states="wait" class="oe_highlight" groups="purchase_request.group_admin"/>
+                        <button name="returns" string="Từ Chối" type="object" states="wait" class="oe_highlight" groups="purchase_request.group_admin"/>
                         <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                     </header>
                     <sheet>
                         <div>
                             <h2>Yêu Cầu Tham Chiếu</h2>
                             <h1><field name="name"/></h1>
-                            <field name="have_write_right" invisible='1'/>
-                            <field name="go" invisible='1'/>
+                            <field name="have_write_right" invisible='0'/>
+                            <field name="go" invisible='0'/>
                         </div>
                         <group>
                             <group>
