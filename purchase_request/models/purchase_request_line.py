@@ -12,8 +12,6 @@ class PurchaseRequestLine(models.Model):
     qty = fields.Float(string='Số lượng')
     qty_approve = fields.Float(string='Số lượng đã phê duyệt',invisible=True)
     total = fields.Float(string='Tổng', compute='_compute_total', store=True)
-    state = fields.Selection([('draft', 'Draft'), ('wait', 'Wait'), ('approved', 'Approved'), ('cancel', 'Cancel')],
-                             string='Trạng thái', default='draft')
 
     @api.depends('qty', 'product_id.list_price')
     def _compute_total(self):
