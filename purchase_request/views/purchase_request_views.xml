@@ -7,13 +7,14 @@
             <field name="arch" type="xml">
                 <form string="purchase_request">
                     <header>
-<!--                    <button name="returns" string="Yêu Cầu Phê Duyệt" attrs="{'invisible':[('state', 'not in','draft')]}"/>-->
+                        <button name="export_to_excel" string="Export" type="object" class="oe_highlight"/>
                         <button name="returns" string="Yêu Cầu Phê Duyệt" type="object" states="draft" class="oe_highlight" groups="base.group_user"/>
                         <button name="QL" string="Quay Lại" type="object" states="wait" class="oe_highlight" groups="base.group_user"/>
                         <button name="BTW" string="Phê Duyệt" type="object" states="wait" class="oe_highlight" groups="purchase_request.group_admin"/>
                         <button name="TC" string="Từ Chối" type="object" states="wait" class="oe_highlight" groups="purchase_request.group_admin"/>
                         <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                     </header>
+
                     <sheet>
                         <div>
                             <h2>Yêu Cầu Tham Chiếu</h2>
