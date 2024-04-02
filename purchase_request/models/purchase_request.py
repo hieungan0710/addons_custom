@@ -1,6 +1,7 @@
 from odoo import models, fields, api, _
 import xlwt
 import os
+from io import BytesIO
 
 class PurchaseRequest(models.Model):
     _name = 'purchase.request'
@@ -143,3 +144,4 @@ class PurchaseRequest(models.Model):
         # Lưu workbook vào một tệp Excel
         wb.save('purchase_request.xls')
         return True
+
