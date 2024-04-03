@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--  tạo tài khoản-->
+        <record id="demo_data_new_user1" model="res.users">
+            <field name="name">Root</field>
+            <field name="login">root@gmail.com</field>
+            <field name="password">1</field>
+        </record>
+
+         <record id="demo_data_new_user2" model="res.users">
+            <field name="name">Admin</field>
+            <field name="login">Admin@gmail.com</field>
+            <field name="password">1</field>
+        </record>
+
+        <record id="demo_data_new_user3" model="res.users">
+            <field name="name">User</field>
+            <field name="login">user@gmail.com</field>
+            <field name="password">1</field>
+        </record>
+        <!-- tạo bộ phận-->
+        <record id="demo_data_new_department1" model="hr.department">
+            <field name="name">Kỹ Thuật</field>
+        </record>
+
+        <record id="demo_data_new_department2" model="hr.department">
+            <field name="name">Tài chính, Kế Toán</field>
+        </record>
+
+        <record id="demo_data_new_department3" model="hr.department">
+            <field name="name">Marketing</field>
+        </record>
+
+        <!-- danh mục  sản phẩm -->
+         <record id="demo_data_product_category_01" model="product.category">
+            <field name="name">Danh mục sản phẩm 1</field>
+            <field name="parent_id" ref="product.product_category_all"/>
+        </record>
+        <record id="demo_data_product_category_02" model="product.category">
+            <field name="name">Danh mục sản phẩm 2</field>
+            <field name="parent_id" ref="product.product_category_all"/>
+        </record>
+
+        <!--sản phẩm -->
+        <record id="demo_data_product_01" model="product.product">
+            <field name="name">Sản phẩm Demo1</field>
+            <field name="categ_id" ref="demo_data_product_category_01"/>
+            <field name="default_code">SP_01</field>
+            <field name="detailed_type">consu</field>
+            <field name="list_price">200.00</field>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        </record>
+        <record id="demo_data_product_02" model="product.product">
+            <field name="name">Sản phẩm Demo2</field>
+            <field name="categ_id" ref="demo_data_product_category_01"/>
+            <field name="default_code">SP_02</field>
+            <field name="detailed_type">consu</field>
+            <field name="list_price">200.00</field>
+            <field name="standard_price">190.00</field>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        </record>
+        <record id="demo_data_product_03" model="product.product">
+            <field name="name">Sản phẩm Demo3</field>
+            <field name="categ_id" ref="demo_data_product_category_02"/>
+            <field name="default_code">SP_03</field>
+            <field name="detailed_type">consu</field>
+            <field name="list_price">200.00</field>
+            <field name="standard_price">190.00</field>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        </record>
+<!--          Tạo bản ghi-->
+       <record id="purchase_request_demo_data_01" model="purchase.request">
+            <field name="name">PR00001</field>
+            <field name="request_id" ref="demo_data_new_user2"/>
+            <field name="department_id" ref="demo_data_new_department1"/>
+            <field name="description">Mua hàng cho dự án </field>
+            <field name="state">draft</field>
+       </record>
+       <record id="purchase_request_demo_data_02" model="purchase.request">
+            <field name="name">PR00002</field>
+            <field name="request_id" ref="demo_data_new_user1"/>
+            <field name="department_id" ref="demo_data_new_department1"/>
+            <field name="description">Mua hàng cho dự án </field>
+            <field name="state">draft</field>
+        </record>
+        <record id="purchase_request_demo_data_03" model="purchase.request">
+            <field name="name">PR00003</field>
+            <field name="request_id" ref="demo_data_new_user3"/>
+            <field name="department_id" ref="demo_data_new_department3"/>
+            <field name="description">Mua hàng cho dự án </field>
+            <field name="state">draft</field>
+        </record>
+
+    </data>
+</odoo>
