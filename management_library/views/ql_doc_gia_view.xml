@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="ql_doc_gia_form_view" model="ir.ui.view">
+        <field name="name">ql.doc.gia.form</field>
+        <field name="model">ql.doc.gia</field>
+        <field name="arch" type="xml">
+            <form string="Độc Giả">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="doc_gia_id"/>
+                            <field name="ten_doc_gia"/>
+                            <field name="ngay_sinh"/>
+                        </group>
+                        <group>
+                            <field name="dia_chi"/>
+                            <field name="sdt"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="ql_doc_gia_tree_view" model="ir.ui.view">
+        <field name="name">ql.doc.gia.tree</field>
+        <field name="model">ql.doc.gia</field>
+        <field name="arch" type="xml">
+            <tree string="Độc Giả">
+                <field name="doc_gia_id"/>
+                <field name="ten_doc_gia"/>
+                <field name="ngay_sinh"/>
+                <field name="dia_chi"/>
+                <field name="sdt"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_ql_doc_gia" model="ir.actions.act_window">
+        <field name="name">Độc Giả</field>
+        <field name="res_model">ql.doc.gia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

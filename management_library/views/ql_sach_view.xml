@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ql_sach_form_view" model="ir.ui.view">
+            <field name="name">ql.sach.form</field>
+            <field name="model">ql.sach</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div style="text-align: center;">
+                            <h1> Quản Lý Sách</h1>
+                        </div>
+                       <group>
+                           <field name="sach_id"/>
+                       </group>
+                       <group>
+                           <group>
+                               <field name="ten_sach"/>
+                               <field name="nha_xb"/>
+                           </group>
+                           <group>
+                               <field name="so_trang"/>
+                               <field name="tac_gia"/>
+                               <field name="so_luong"/>
+                           </group>
+                       </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <record id="ql_sach_tree_view" model="ir.ui.view">
+            <field name="name">ql.sach.tree.view</field>
+            <field name="model">ql.sach</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sach_id"/>
+                    <field name="ten_sach"/>
+                    <field name="nha_xb"/>
+                    <field name="so_trang"/>
+                    <field name="tac_gia"/>
+                    <field name="so_luong"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ql_sach_kanban_view" model="ir.ui.view">
+        <field name="name">ql.sach.kanban</field>
+        <field name="model">ql.sach</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="sach_id"/>
+                <field name="ten_sach"/>
+                <field name="nha_xb"/>
+                <field name="so_trang"/>
+                <field name="tac_gia"/>
+                <field name="so_luong"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <div>
+                                    <strong> Mã Sách: </strong>
+                                    <span><field name="sach_id"/></span>
+                                </div>
+                                <div>
+                                    <strong>Tên Sách: </strong>
+                                    <span><field name="ten_sach"/></span>
+                                </div>
+                                <div>
+                                    <strong>Nhà Xuất Bản:</strong>
+                                    <span><field name="nha_xb"/></span>
+                                </div>
+                                 <div>
+                                    <strong>Số Trang:</strong>
+                                    <span><field name="so_trang"/></span>
+                                </div>
+                                <div>
+                                    <strong>Tác Giả: </strong>
+                                    <span><field name="tac_gia"/> </span>
+                                </div>
+                                <div>
+                                    <strong>Số Lượng: </strong>
+                                    <span><field name="so_luong"/></span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ql_sach_views">
+            <field name="name">Quản lý Sách</field>
+            <field name="res_model">ql.sach</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

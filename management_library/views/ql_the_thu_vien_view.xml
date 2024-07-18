@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="ql_the_thu_vien_form_view" model="ir.ui.view">
+        <field name="name">ql.the.thu.vien.form</field>
+        <field name="model">ql.the.thu.vien</field>
+        <field name="arch" type="xml">
+            <form string="Thẻ Thư Viện">
+                <sheet>
+                    <group>
+                        <field name="doc_gia_id"/>
+                        <field name="ten_doc_gia"/>
+                        <field name="ngay_sinh"/>
+                        <field name="don_vi"/>
+                        <field name="gioi_tinh"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="ql_the_thu_vien_tree_view" model="ir.ui.view">
+        <field name="name">ql.the.thu.vien.tree</field>
+        <field name="model">ql.the.thu.vien</field>
+        <field name="arch" type="xml">
+            <tree string="Thẻ Thư Viện">
+                <field name="doc_gia_id"/>
+                <field name="ten_doc_gia"/>
+                <field name="ngay_sinh"/>
+                <field name="don_vi"/>
+                <field name="gioi_tinh"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_ql_the_thu_vien" model="ir.actions.act_window">
+        <field name="name">Thẻ Thư Viện</field>
+        <field name="res_model">ql.the.thu.vien</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menuitem -->
+</odoo>

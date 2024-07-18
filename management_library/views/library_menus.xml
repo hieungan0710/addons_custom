@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem name="Quản Lý Thư Viện" id="library_menu_root"/>
+
+    <menuitem sequence="1" name="Quản Lý Thư Viện " id="ql_thu_vien" parent="library_menu_root"/>
+    <menuitem  name="Quản Lý Độc Giả" id="menu_ql_doc_gia" action="action_ql_doc_gia" parent="ql_thu_vien"/>
+    <menuitem  name="Quản Lý thẻ thư viện" id="menu_ql_the_thu_vien" action="action_ql_the_thu_vien" parent="ql_thu_vien"/>
+
+    <menuitem sequence="2" name="Quản Lý Sách" id="menu_sach" parent="library_menu_root"/>
+    <menuitem name="Quản Lý Sách" id="menu_ql_sach" action="action_ql_sach_views"  parent="menu_sach"/>
+    <menuitem name="Quản Lý Mượn Trả Sách" id="menu_ql_muon_tra_sach" action="action_ql_muon_tra_sach_views" parent="menu_sach" />
+
+
+    <menuitem sequence="3" name="Báo Cáo Thống kê" id="menu_bao_cao" action="action_ql_the_thu_vien" parent="library_menu_root"/>
+
+</odoo>

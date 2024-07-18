@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ql_muon_tra_sach_form_view" model="ir.ui.view">
+            <field name="name">ql.muon.tra.sach.form</field>
+            <field name="model">ql.muon.tra.sach</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="trang_thai" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet>
+                         <div style="text-align: center;">
+                             <h1> Quản Lý Mượn Trả Sách </h1>
+                         </div>
+                        <group>
+                            <group>
+                                <field name="ma_sach_id"/>
+                                <field name="doc_gia_id" />
+                                <field name="trang_thai"/>
+                                <field name="ngay_nhap" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string=" Chi Tiết Sách ">
+                            </page>
+                            <page string="Chi Tiết Phạt Trễ Hạn">
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ql_muon_tra_sach_tree_view" model="ir.ui.view">
+            <field name="name">ql.muon.tra.sach.tree.view</field>
+            <field name="model">ql.muon.tra.sach</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_sach_id"/>
+                    <field name="doc_gia_id" />
+                    <field name="trang_thai"/>
+                    <field name="ngay_nhap" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ql_muon_tra_sach_views">
+            <field name="name">QL Mượn Trả Sách</field>
+            <field name="res_model">ql.muon.tra.sach</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

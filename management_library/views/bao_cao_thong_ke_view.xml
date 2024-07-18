@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="bao_cao_thong_ke_form_view" model="ir.ui.view">
+            <field name="name">bao.cao.thong.ke.form</field>
+            <field name="model">bao.cao.thong.ke</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+
+</odoo>
